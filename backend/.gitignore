@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+*.db
+knowledge_files/
+dba_knowledge_db/
+dist/
+*.egg-info/

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执行日志详情测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .test-case {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .test-case h3 {
+            margin-top: 0;
+            color: #555;
+        }
+        .expected {
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .actual {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .status-success {
+            background: #4caf50;
+            color: white;
+        }
+        .status-not-executed {
+            background: #9e9e9e;
+            color: white;
+        }
+        .template-row {
+            background: #374151;
+            color: #f3f4f6;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        .template-badge {
+            background: #4b5563;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-right: 8px;
+        }
+        .summary-row {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>执行日志详情功能测试</h1>
+        
+        <div class="test-case">
+            <h3>测试用例：任务编排 Sched-0000000006 "自动化作业测试"</h3>
+            
+            <div class="expected">
+                <h4>期望的结果：</h4>
+                <p>1. 显示所有3个模板（包括未执行的"自动化机器巡检"）</p>
+                <p>2. 模板行使用深色背景显示</p>
+                <p>3. 正确显示每个模板的状态：</p>
+                <ul>
+                    <li>Linux系统巡检：成功 (2个脚本)</li>
+                    <li>MySQL数据库巡检：成功 (2个脚本)</li>
+                    <li>自动化机器巡检：未执行 (0个脚本)</li>
+                </ul>
+                <p>4. 汇总行显示：合计 3 个模板 · 4 个脚本</p>
+            </div>
+            
+            <div class="actual">
+                <h4>修改后的实现：</h4>
+                
+                <div class="template-row">
+                    <span class="template-badge">模板</span>
+                    <span>Linux系统巡检</span>
+                    <span style="margin-left: auto; margin-right: 20px;">(2个脚本)</span>
+                    <span class="status status-success">成功</span>
+                </div>
+                
+                <div class="template-row">
+                    <span class="template-badge">模板</span>
+                    <span>MySQL数据库巡检</span>
+                    <span style="margin-left: auto; margin-right: 20px;">(2个脚本)</span>
+                    <span class="status status-success">成功</span>
+                </div>
+                
+                <div class="template-row">
+                    <span class="template-badge">模板</span>
+                    <span>自动化机器巡检</span>
+                    <span style="margin-left: auto; margin-right: 20px;">(0个脚本)</span>
+                    <span class="status status-not-executed">未执行</span>
+                </div>
+                
+                <div class="summary-row">
+                    合计 3 个模板 · 4 个脚本
+                </div>
+                
+                <p><strong>样式说明：</strong></p>
+                <ul>
+                    <li>模板行使用深灰色背景 (#374151)</li>
+                    <li>文字使用浅灰色 (#f3f4f6)</li>
+                    <li>模板标签使用稍深的灰色 (#4b5563)</li>
+                    <li>汇总行使用更深的背景 (#1f2937)</li>
+                    <li>成功状态使用绿色背景</li>
+                    <li>未执行状态使用灰色背景</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-case">
+            <h3>技术实现细节：</h3>
+            <p><strong>修改的文件：</strong> <code>frontend/src/pages/automation/ExecutionLogs.tsx</code></p>
+            <p><strong>主要修改：</strong></p>
+            <ol>
+                <li>修改了 <code>renderScheduleDetail</code> 函数，现在会显示所有模板（包括没有脚本的模板）</li>
+                <li>为模板行添加了深色显示样式：<code>bg-gray-800 text-gray-100</code></li>
+                <li>更新了状态标签样式：<code>bg-green-700 text-green-100</code>（成功）和 <code>bg-red-700 text-red-100</code>（失败）</li>
+                <li>添加了"未执行"状态显示</li>
+                <li>更新了汇总行的样式和数据计算</li>
+                <li>确保 <code>scripts</code> 字段可选，正确处理 undefined 情况</li>
+            </ol>
+            
+            <p><strong>测试数据：</strong> 已创建 <code>test_schedule_output.json</code> 文件，包含完整的测试数据</p>
+        </div>
+        
+        <div class="test-case">
+            <h3>验证步骤：</h3>
+            <ol>
+                <li>前端服务器已启动在端口 5175</li>
+                <li>后端服务器正在端口 8000 运行</li>
+                <li>TypeScript 编译通过，无类型错误</li>
+                <li>可以访问 <a href="http://localhost:5175/execution-logs" target="_blank">http://localhost:5175/execution-logs</a> 查看实际效果</li>
+                <li>点击任意一个 schedule 类型的执行日志的"详情"按钮，查看修改后的界面</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

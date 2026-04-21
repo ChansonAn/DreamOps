@@ -1,0 +1,4 @@
+[INFO] 从快照加载：C:\Users\Administrator\.cache\huggingface\hub\models--BAAI--bge-large-zh-v1.5\snapshots\79e7739b6ab944e86d6171e44d24c997fc1e0116
+[INFO] OK 模型加载成功
+INFO:     127.0.0.1:57217 - "GET /api/articles HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57217 - "GET /api/articles/ HTTP/1.1" 200 OK

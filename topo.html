@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>IT运维架构拓扑图</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #ffffff; font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif; }
+        .filter-bar {
+            padding: 10px 20px; background: #fafafa; border-bottom: 1px solid #e8e8e8;
+            display: flex; gap: 15px; align-items: center; flex-wrap: wrap;
+        }
+        .filter-bar label { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 13px; color: #333; }
+        .filter-bar label input[type="checkbox"] { accent-color: #1890ff; cursor: pointer; }
+        .filter-title { font-weight: bold; color: #1890ff; margin-right: 10px; font-size: 14px; }
+        .filter-bar button {
+            background: #fff; color: #333; border: 1px solid #d9d9d9;
+            padding: 4px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-family: inherit;
+        }
+        .filter-bar button:hover { border-color: #1890ff; color: #1890ff; }
+        #topo { width: 100%; height: calc(100vh - 45px); }
+    </style>
+</head>
+<body>
+    <div class="filter-bar">
+        <span class="filter-title">资产筛选</span>
+        <label><input type="checkbox" value="0" class="filter-checkbox" checked> 机房/机柜</label>
+        <label><input type="checkbox" value="1" class="filter-checkbox" checked> 物理服务器</label>
+        <label><input type="checkbox" value="2" class="filter-checkbox" checked> 宿主机</label>
+        <label><input type="checkbox" value="3" class="filter-checkbox" checked> 网络设备</label>
+        <label><input type="checkbox" value="4" class="filter-checkbox" checked> 业务应用</label>
+        <label><input type="checkbox" value="5" class="filter-checkbox" checked> 数据库</label>
+        <button id="resetBtn">重置</button>
+    </div>
+    <div id="topo"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script>
+    var myChart = echarts.init(document.getElementById('topo'));
+
+    var categories = [
+        { name: '机房/机柜', itemStyle: { color: '#dbeafe', borderColor: '#3b82f6', borderWidth: 2 } },
+        { name: '物理服务器', itemStyle: { color: '#ede9fe', borderColor: '#8b5cf6', borderWidth: 2 } },
+        { name: '宿主机', itemStyle: { color: '#fce7f3', borderColor: '#ec4899', borderWidth: 2 } },
+        { name: '网络设备', itemStyle: { color: '#ffedd5', borderColor: '#f97316', borderWidth: 2 } },
+        { name: '业务应用', itemStyle: { color: '#fef9c3', borderColor: '#eab308', borderWidth: 2 } },
+        { name: '数据库', itemStyle: { color: '#dcfce7', borderColor: '#22c55e', borderWidth: 2 } }
+    ];
+
+    var nodes = [
+        { name: '核心机房A区',     category: 0, symbol: 'roundRect', symbolSize: 80,
+          label: { fontWeight: 'bold', fontSize: 13, color: '#1d4ed8' } },
+        { name: '机柜A-01',        category: 0, symbol: 'rect',      symbolSize: 62,
+          label: { fontSize: 12, color: '#0f766e' } },
+        { name: '机柜A-02',        category: 0, symbol: 'rect',      symbolSize: 62,
+          label: { fontSize: 12, color: '#0f766e' } },
+
+        { name: '物理机-01',       category: 1, symbol: 'rect', symbolSize: 55,
+          label: { color: '#6d28d9' } },
+        { name: '物理机-02',       category: 1, symbol: 'rect', symbolSize: 55,
+          label: { color: '#6d28d9' } },
+        { name: '物理机-03',       category: 1, symbol: 'rect', symbolSize: 55,
+          label: { color: '#6d28d9' } },
+        { name: '物理机-04',       category: 1, symbol: 'rect', symbolSize: 55,
+          label: { color: '#6d28d9' } },
+        { name: '物理机-05',       category: 1, symbol: 'rect', symbolSize: 55,
+          label: { color: '#6d28d9' } },
+
+        { name: '宿主机-01',       category: 2, symbol: 'rect', symbolSize: 50,
+          label: { color: '#be185d' } },
+        { name: '宿主机-02',       category: 2, symbol: 'rect', symbolSize: 50,
+          label: { color: '#be185d' } },
+        { name: '宿主机-03',       category: 2, symbol: 'rect', symbolSize: 50,
+          label: { color: '#be185d' } },
+        { name: '宿主机-04',       category: 2, symbol: 'rect', symbolSize: 50,
+          label: { color: '#be185d' } },
+
+        { name: '核心交换机',       category: 3, symbol: 'diamond', symbolSize: 64,
+          label: { fontWeight: 'bold', fontSize: 12, color: '#c2410c' } },
+        { name: '负载均衡Nginx',    category: 3, symbol: 'diamond', symbolSize: 58,
+          label: { fontSize: 12, color: '#b91c1c' } },
+
+        { name: '用户中心服务',     category: 4, symbol: 'circle', symbolSize: 50,
+          label: { color: '#a16207' } },
+        { name: '订单服务',         category: 4, symbol: 'circle', symbolSize: 50,
+          label: { color: '#a16207' } },
+        { name: '支付服务',         category: 4, symbol: 'circle', symbolSize: 50,
+          label: { color: '#a16207' } },
+
+        { name: 'Oracle 19c主库',   category: 5, symbol: 'circle', symbolSize: 64,
+          label: { fontWeight: 'bold', fontSize: 12, color: '#15803d' } },
+        { name: 'Redis缓存',        category: 5, symbol: 'circle', symbolSize: 64,
+          label: { fontWeight: 'bold', fontSize: 12, color: '#b91c1c' } }
+    ];
+
+    var links = [
+        /* 机房→机柜 */
+        { source: '核心机房A区', target: '机柜A-01', lineStyle: { color: '#93c5fd', width: 2.5, curveness: 0.15 } },
+        { source: '核心机房A区', target: '机柜A-02', lineStyle: { color: '#93c5fd', width: 2.5, curveness: 0.15 } },
+
+        /* 机柜→物理机 */
+        { source: '机柜A-01', target: '物理机-01', lineStyle: { color: '#5eead4', width: 2, curveness: 0.12 } },
+        { source: '机柜A-01', target: '物理机-02', lineStyle: { color: '#5eead4', width: 2, curveness: 0.12 } },
+        { source: '机柜A-02', target: '物理机-03', lineStyle: { color: '#5eead4', width: 2, curveness: 0.12 } },
+        { source: '机柜A-02', target: '物理机-04', lineStyle: { color: '#5eead4', width: 2, curveness: 0.12 } },
+        { source: '机柜A-02', target: '物理机-05', lineStyle: { color: '#5eead4', width: 2, curveness: 0.12 } },
+
+        /* 物理机→宿主机 */
+        { source: '物理机-01', target: '宿主机-01', lineStyle: { color: '#c4b5fd', width: 2, curveness: 0.12 } },
+        { source: '物理机-02', target: '宿主机-02', lineStyle: { color: '#c4b5fd', width: 2, curveness: 0.12 } },
+        { source: '物理机-03', target: '宿主机-03', lineStyle: { color: '#c4b5fd', width: 2, curveness: 0.12 } },
+        { source: '物理机-04', target: '宿主机-04', lineStyle: { color: '#c4b5fd', width: 2, curveness: 0.12 } },
+
+        /* 宿主机→交换机 */
+        { source: '宿主机-01', target: '核心交换机',   lineStyle: { color: '#fdba74', width: 1.8 } },
+        { source: '宿主机-02', target: '核心交换机',   lineStyle: { color: '#fdba74', width: 1.8 } },
+        { source: '宿主机-03', target: '核心交换机',   lineStyle: { color: '#fdba74', width: 1.8 } },
+        { source: '宿主机-04', target: '核心交换机',   lineStyle: { color: '#fdba74', width: 1.8 } },
+        { source: '核心交换机', target: '负载均衡Nginx', lineStyle: { color: '#fca5a5', width: 2 } },
+
+        /* 负载分发 */
+        { source: '负载均衡Nginx', target: '用户中心服务', lineStyle: { color: '#fde047', width: 1.8 } },
+        { source: '负载均衡Nginx', target: '订单服务',     lineStyle: { color: '#fde047', width: 1.8 } },
+        { source: '负载均衡Nginx', target: '支付服务',     lineStyle: { color: '#fde047', width: 1.8 } },
+
+        /* 部署关系（灰色点线） */
+        { source: '宿主机-01',   target: '用户中心服务',   lineStyle: { color: '#9ca3af', width: 1.5, type: [6, 4], curveness: -0.25 } },
+        { source: '宿主机-02',   target: '订单服务',       lineStyle: { color: '#9ca3af', width: 1.5, type: [6, 4], curveness: -0.25 } },
+        { source: '宿主机-03',   target: '支付服务',       lineStyle: { color: '#9ca3af', width: 1.5, type: [6, 4], curveness: -0.25 } },
+        { source: '物理机-05',   target: 'Oracle 19c主库', lineStyle: { color: '#9ca3af', width: 1.5, type: [6, 4], curveness: -0.25 } },
+        { source: '宿主机-04',   target: 'Redis缓存',      lineStyle: { color: '#9ca3af', width: 1.5, type: [6, 4], curveness: -0.25 } },
+
+        /* SQL查询流（绿色实线） */
+        { source: '用户中心服务', target: 'Oracle 19c主库', lineStyle: { color: '#4ade80', width: 2, curveness: 0.2 } },
+        { source: '订单服务',     target: 'Oracle 19c主库', lineStyle: { color: '#4ade80', width: 2, curveness: 0.2 } },
+        { source: '支付服务',     target: 'Oracle 19c主库', lineStyle: { color: '#4ade80', width: 2, curveness: 0.2 } },
+
+        /* Redis缓存流（红色虚线） */
+        { source: '用户中心服务', target: 'Redis缓存', lineStyle: { color: '#f87171', width: 1.8, type: 'dashed', curveness: -0.2 } },
+        { source: '订单服务',     target: 'Redis缓存', lineStyle: { color: '#f87171', width: 1.8, type: 'dashed', curveness: -0.2 } },
+        { source: '支付服务',     target: 'Redis缓存', lineStyle: { color: '#f87171', width: 1.8, type: 'dashed', curveness: -0.2 } }
+    ];
+
+    function renderChart(nodeData, linkData) {
+        myChart.setOption({
+            backgroundColor: '#ffffff',
+            title: {
+                text: 'IT运维架构拓扑图',
+                left: 'center', top: 10,
+                textStyle: { color: '#1f2937', fontSize: 18, fontWeight: 'bold' },
+                subtext: '拖拽节点 | 滚轮缩放 | 绿线=SQL查询 | 红虚线=缓存读写 | 灰点线=部署承载',
+                subtextStyle: { color: '#9ca3af', fontSize: 11 }
+            },
+            tooltip: {
+                trigger: 'item',
+                backgroundColor: 'rgba(255,255,255,0.96)',
+                borderColor: '#e5e7eb', borderWidth: 1,
+                textStyle: { color: '#374151', fontSize: 13 },
+                extraCssText: 'box-shadow:0 2px 12px rgba(0,0,0,0.08);'
+            },
+            legend: {
+                data: categories,
+                top: 55, left: 'center',
+                textStyle: { color: '#6b7280', fontSize: 12 },
+                itemWidth: 16, itemHeight: 12, itemGap: 20
+            },
+            animationDuration: 1500,
+            animationEasingUpdate: 'quinticInOut',
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                force: {
+                    repulsion: 2800,
+                    edgeLength: [100, 240],
+                    gravity: 0.08,
+                    layoutAnimation: true,
+                    friction: 0.6
+                },
+                roam: true,
+                draggable: true,
+                categories: categories,
+                data: nodeData,
+                links: linkData,
+                label: {
+                    show: true, fontSize: 11, color: '#4b5563',
+                    position: 'bottom', distance: 8
+                },
+                edgeLabel: { show: false },
+                edgeSymbol: ['none', 'arrow'],
+                edgeSymbolSize: [0, 7],
+                lineStyle: { curveness: 0.15, opacity: 0.7 },
+                emphasis: {
+                    focus: 'adjacency',
+                    itemStyle: { shadowBlur: 16, shadowColor: 'rgba(59,130,246,0.35)' },
+                    lineStyle: { width: 3 }
+                }
+            }]
+        }, true);
+    }
+
+    renderChart(nodes, links);
+
+    /* 筛选 */
+    function filterChart() {
+        var checked = [];
+        document.querySelectorAll('.filter-checkbox:checked').forEach(function(cb) {
+            checked.push(parseInt(cb.value));
+        });
+        var fNodes = nodes.filter(function(n) { return checked.indexOf(n.category) >= 0; });
+        var names = {};
+        fNodes.forEach(function(n) { names[n.name] = true; });
+        var fLinks = links.filter(function(l) { return names[l.source] && names[l.target]; });
+        renderChart(fNodes, fLinks);
+    }
+
+    document.getElementById('resetBtn').addEventListener('click', function() {
+        document.querySelectorAll('.filter-checkbox').forEach(function(i) { i.checked = true; });
+        filterChart();
+    });
+    document.querySelectorAll('.filter-checkbox').forEach(function(cb) {
+        cb.addEventListener('change', filterChart);
+    });
+
+    window.addEventListener('resize', function() { myChart.resize(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+INFO:     Started server process [27688]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57255 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57255 - "POST /api/script/1/create-template HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57255 - "POST /api/job-templates//create-job?job_name=MySQL%E5%B7%A1%E6%A3%80%E4%BD%9C%E4%B8%9A HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57255 - "POST /api/jobs//execute HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57255 - "GET /api/execution-logs/?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65515 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65515 - "POST /api/script/2/create-template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65515 - "POST /api/job-templates/4/create-job?job_name=%E8%81%94%E5%8A%A8%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65515 - "POST /api/jobs/3/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65515 - "GET /api/execution-logs/?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63076 - "GET /api/execution-logs/?page=1&page_size=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "OPTIONS /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "OPTIONS /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "OPTIONS /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "OPTIONS /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "OPTIONS /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "OPTIONS /api/script HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "OPTIONS /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "OPTIONS /api/script HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53425 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53423 - "OPTIONS /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53424 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53424 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53421 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53424 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53421 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53425 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53425 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53425 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53425 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53421 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53421 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53421 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "OPTIONS /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "GET /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53421 - "OPTIONS /api/script/2/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "POST /api/script/2/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "GET /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "OPTIONS /api/script/3/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "POST /api/script/3/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54137 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54138 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54139 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54137 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54141 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54139 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54140 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54140 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54139 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54141 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54137 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54140 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54139 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54138 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54137 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "POST /api/script/3/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/cmdb/config-items?type=host HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "POST /api/script/2/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56467 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57536 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56467 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56470 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56470 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56470 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56469 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56470 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56469 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56470 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56470 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "OPTIONS /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "POST /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "OPTIONS /api/jobs/3/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "POST /api/jobs/3/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63252 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63253 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63253 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63251 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63252 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63252 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60861 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60862 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50869 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50870 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50871 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50870 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50872 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50872 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50872 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50872 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50872 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50872 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53732 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53731 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53732 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53731 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53735 - "OPTIONS /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53736 - "POST /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53736 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53735 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53735 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53735 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53736 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53735 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53736 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "OPTIONS /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "POST /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "POST /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "OPTIONS /api/jobs/4/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63083 - "POST /api/jobs/4/execute HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63083 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63083 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63084 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63085 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63083 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63085 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63080 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63084 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63084 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63367 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63368 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63367 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63368 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63368 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63367 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63368 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63367 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63368 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63368 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52951 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52951 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52951 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52951 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65407 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65407 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65407 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65407 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65410 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65411 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65410 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65410 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65410 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65410 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65411 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65411 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65411 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65410 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59735 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59734 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59734 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59735 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65407 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59735 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65408 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65408 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65408 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65408 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59735 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "OPTIONS /api/cmdb/config-items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "OPTIONS /api/cmdb/config-items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/cmdb/config-items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/cmdb/config-items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "OPTIONS /api/cmdb/tags HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/cmdb/tags HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/cmdb/tags HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "OPTIONS /api/cmdb/relationships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/cmdb/relationships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59735 - "GET /api/cmdb/relationships HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55852 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55852 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55852 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55852 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55853 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55853 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "OPTIONS /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "OPTIONS /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "OPTIONS /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52471 - "OPTIONS /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "OPTIONS /api/script HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52471 - "OPTIONS /api/script HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52470 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52469 - "OPTIONS /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "OPTIONS /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "OPTIONS /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52471 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52470 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52471 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52468 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52469 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55051 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/execution-logs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/script HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55051 - "GET /api/script/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/job-templates/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55051 - "GET /api/script/ HTTP/1.1" 200 OK

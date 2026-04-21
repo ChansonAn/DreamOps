@@ -1,0 +1,83 @@
+{
+  "schedule_id": 6,
+  "schedule_name": "自动化作业测试",
+  "schedule_start": "2026-04-20 21:59:17",
+  "schedule_end": "2026-04-20 21:59:19",
+  "total_duration_seconds": 2.1,
+  "templates": [
+    {
+      "template_id": 1,
+      "template_name": "Linux系统巡检",
+      "template_index": 1,
+      "template_total": 3,
+      "status": "success",
+      "scripts": [
+        {
+          "script_id": 2,
+          "script_name": "Linux系统巡检",
+          "script_index": 1,
+          "script_total": 1,
+          "start_time": "2026-04-20 21:59:17",
+          "end_time": "2026-04-20 21:59:18",
+          "duration_seconds": 0.7,
+          "success": true,
+          "output": "巡检完成，系统正常",
+          "error": ""
+        },
+        {
+          "script_id": 2,
+          "script_name": "Linux系统巡检",
+          "script_index": 2,
+          "script_total": 2,
+          "start_time": "2026-04-20 21:59:18",
+          "end_time": "2026-04-20 21:59:19",
+          "duration_seconds": 0.7,
+          "success": true,
+          "output": "巡检完成，系统正常",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "template_id": 2,
+      "template_name": "MySQL数据库巡检",
+      "template_index": 2,
+      "template_total": 3,
+      "status": "success",
+      "scripts": [
+        {
+          "script_id": 3,
+          "script_name": "MySQL数据库巡检",
+          "script_index": 1,
+          "script_total": 2,
+          "start_time": "2026-04-20 21:59:18",
+          "end_time": "2026-04-20 21:59:18",
+          "duration_seconds": 0.3,
+          "success": true,
+          "output": "数据库连接正常",
+          "error": ""
+        },
+        {
+          "script_id": 3,
+          "script_name": "MySQL数据库巡检",
+          "script_index": 2,
+          "script_total": 2,
+          "start_time": "2026-04-20 21:59:19",
+          "end_time": "2026-04-20 21:59:19",
+          "duration_seconds": 0.3,
+          "success": true,
+          "output": "数据库性能正常",
+          "error": ""
+        }
+      ]
+    },
+    {
+      "template_id": 3,
+      "template_name": "自动化机器巡检",
+      "template_index": 3,
+      "template_total": 3,
+      "status": "not_executed",
+      "scripts": []
+    }
+  ]
+}
